@@ -11,6 +11,6 @@ class Kelas extends Model
     protected $fillable = array('kelas','dosen_wali');
 
     public function mahasiswa(){
-		return $this->belongsTo('Mahasiswa');
+		return $this->hasOne('App\Mahasiswa', 'kelas_id');
 	}
 }

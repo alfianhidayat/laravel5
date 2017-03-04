@@ -21,3 +21,5 @@ Route::get('/', function () {
 
 Route::get('/mahasiswa','MahasiswaController@index');
 
+Route::resource('student', 'StudentController');
+

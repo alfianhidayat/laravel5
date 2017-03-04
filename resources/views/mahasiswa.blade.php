@@ -20,7 +20,7 @@
 			</div>
 		</header>
 		<div class="container">
-		<a href="{{url('/bear/tambah')}}" class="btn btn-success"> Tambah </a>
+		<a href="/student/create" class="btn btn-success"> Tambah </a>
 		<br>
 		<div align="middle"> 
 		@if(!empty($data))
@@ -37,10 +37,15 @@
 								<td>{{ $data_mhs->nim }}</td>
 								<td>{{ $data_mhs->nama }}</td>
 								<td>{{ $data_mhs->email }}</td>
-								<td>{{ $data_mhs->kelasi_id }}</td>
+								<td>{{ $data_mhs->kelas->kelas }}</td>
 								<td>
+									<a href="/student/{{$data_mhs->id}}" class="btn btn-warning"> Show </a>
 									<a href="#" class="btn btn-warning"> Ubah </a>
-									<a href="#" class="btn btn-danger"> Hapus </a>
+									<form action="/student/{{$data_mhs->id}}" method="post">
+										{{ csrf_field()  }}
+										<input type="hidden" name="_method" value="delete">
+										<input type="submit" class="btn btn-danger" value="Delete">
+									</form>
 								</td>
 							</tr>
 						<?php endforeach ?>

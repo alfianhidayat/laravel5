@@ -11,6 +11,6 @@ class Mahasiswa extends Model
     protected $fillable = array('nim','nama','email','kelas_id');
 
     public function kelas(){
-		return $this->hasOne('Kelas');
+		return $this->belongsTo('App\Kelas');
 	}
 }
