@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*Route::get('/mahasiswa', function(){
+	return view('mahasiswa');
+});*/
+
+Route::get('/mahasiswa','MahasiswaController@index');
+
